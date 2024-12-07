@@ -1,6 +1,5 @@
 import os
 import sys
-import importlib
 from flask import Flask, request, render_template
 
 # Environment variables to resolve SpeechBrain symlink issues
