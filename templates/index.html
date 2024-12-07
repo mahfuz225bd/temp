@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sub Applications</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+    <h1>All Sub Applications</h1>
+    <h2>Hosted under the domain: {{ root_url }}</h2>
+    <input type="search" id="search" placeholder="Search for sub-apps...">
+    <div id="apps-list">
+        {% for root_folder, apps in grouped_apps.items() %}
+        <h3>{{ root_folder }}</h3>
+        <ul class="app-list">
+            {% for app in apps %}
+            <li class="app-item"><a href="{{ app }}">{{ app }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+
+</html>
